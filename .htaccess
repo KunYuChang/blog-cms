@@ -1,0 +1,11 @@
+# 啟用 RewriteEngine 模組
+RewriteEngine on
+
+# RewriteRule :  URL 重寫規則
+# $1.php      :  將匹配的 URL 重寫為對應的 PHP 文件
+# [NC,L]      :  NC 表示比較時不區分大小寫（No Case），L 表示這是最後一個規則，停止執行 RewriteRule。
+RewriteRule ^(index|contact|registration)$ $1.php [NC,L]
+
+RewriteRule ^post/(\d+)$ post.php?p_id=$1 [NC,L]
+
+RewriteRule ^category/(\d+)$ post.php?category=$1 [NC,L]
